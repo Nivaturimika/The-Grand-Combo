@@ -1,0 +1,18 @@
+name: Build Matrix
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  windows-build:
+    runs-on: [windows-latest]
+    name: Windows (${{ matrix.config }})
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        
+    - name: Run validation
+      run: |
+        start /wait KatEngine.exe -validate -mod TGC.mod
