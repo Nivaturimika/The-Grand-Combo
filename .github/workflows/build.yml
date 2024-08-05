@@ -7,12 +7,11 @@ on:
 jobs:
   windows-build:
     runs-on: [windows-latest]
-    name: Windows (${{ matrix.config }})
+    name: Validation
     steps:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-        
     - name: Run validation
       run: |
-        start /wait .\KatEngine.exe -validate -mod TGC.mod
+        KatEngine -validate -mod TGC.mod
