@@ -14,4 +14,4 @@ jobs:
         fetch-depth: 0
     - name: Run validation
       run: |
-        D:/a/The-Grand-Combo/The-Grand-Combo/KatEngine.exe -validate -mod TGC.mod
+        start /wait D:/a/The-Grand-Combo/The-Grand-Combo/KatEngine.exe -validate -mod TGC.mod
